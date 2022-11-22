@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+/* utility styles */
+:root{
+    --primary-text-color:hsl(227, 35%, 25%);
+    --button-color:hsl(227, 35%, 25%);
+    --slider-color:#23d8c7;
+    --slider-nob:#127269;
+    --secondary-text-color: hsl(225, 20%, 60%);
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.3;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*Text styles*/
+.text-center{
+    text-align: center;
+} 
+.txt-xl{
+    font-size: 3.0rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+.txt-lg{
+    font-size: 1.7rem;
+    text-transform: capitalize;
+}
+.txt-md{
+    font-size: 1.3rem;
+    text-align: center;
+}
+.txt-sm{
+    font-size: 1.0rem;
+    text-align: center;
+}
+
+/* Main styles */
+.main{
+    width: 100%;
+    min-height: 100vh;
+    background-color: hsl(230, 100%, 99%);
+}
+.price-divider{
+    position: relative;
+    min-height: 65vh;
+    background:hsl(210, 72.7%, 95.7%);
+    
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+    position:absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    height: auto;
+    z-index: 99;    
+}
+.container .price-title{
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    padding: 40px 0;
+    position: relative;
+}
+.container .price-title .circle{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%); 
+    z-index: -1;
+}
+.container .price-title .circle img{
+   width: 100%;
+   height: 100%;
+   object-fit: fill;
+}
+.container .price-title h2{
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.7;
+  color: var(--primary-text-color);
+}
+.container .price-title h4{
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--secondary-text-color); 
+  padding-bottom: 20px; 
+}
+.container .price-card{
+    border: 1px solid whitesmoke;
+    width: 500px;
+    min-height: 300px;
+    height: auto;
+    margin: 10px auto;
+    background: hsl(0, 0%, 100%);
+    z-index: 100;
+    box-shadow: 4px 7px 20px hsl(223, 50%, 87%);
+    border-radius: 9px;
+  
+}
+.container .price-card .card-title{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding-top:35px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 90px;
+    width: 100%;
+ 
+}
+.container .price-card .card-title .heading h5{
+    font-size: 0.95rem;
+    color: var(--secondary-text-color);
+
+}
+.container .price-card .card-title .heading2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .price-card .card-title .heading2 i{
+   font-size: 1.9rem;
+}
+.container .price-card .card-title .heading2 h3{
+   font-size: 2.0rem;
+   color: var(--primary-text-color);
+}
+
+.container .price-card .card-title .heading2 h3 span{
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    position: fixed;
+    margin-top: 10px;
+    margin-left:3px;
+}
+/* Range slider */
+.container .price-card .price-range{
+   
+    margin: 20px auto;
+    width: 90%;
+    position: relative;
+}
+.container .price-card .price-range .bar{
+    position: absolute;
+    z-index: 1;
+    left: 2x;
+    top: 9px;   
+    width: 100%;
+    height: 7px;
+    border-radius: 5px;
+    background-color:whitesmoke;
+    overflow: hidden;
+    
+}
+.container .price-card .price-range .bar .fill{
+    display: block;
+    width: 4%;
+    height: 100%;
+    background-color: hsl(174, 86%, 45%)
+}
+
+
+.container .price-card .price-range #slider{
+    -webkit-appearance:none;
+    appearance: none;
+    z-index: 2;
+    width: 100%;
+    height: 6px;
+    outline: none;
+    border-radius: 5px;
+    background:transparent;
+    box-shadow: 2px 3px 5px hsl(174, 37%, 68%);
+}
+
+.container .price-card .price-range #slider::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: hsl(174, 86%, 45%);
+    box-shadow: -2px 10px 15px hsl(174, 93%, 73%);
+    cursor: pointer;
+    z-index: 3;
+    position: relative;
+    outline: none;
+}
+.container .price-card .price-range #slider::-webkit-slider-thumb:hover{
+ 
+    box-shadow: 0px 0px 0px 20px hsl(174, 93%, 73%, .1);
+   
+}
+
+
+/* TOGGLE BTN SECTION */
+.container .price-card .bill-cta{
+    margin-top:40px;
+    margin-bottom: 35px;
+    width: 100%;
+    
+}
+.container .price-card .bill-cta .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.1rem;
+    margin-left: 100px;
+     /* padding: 5px  0px;  */
+}
+.container .price-card .bill-cta .row p{
+    font-size: 0.8rem;
+    color: var(--secondary-text-color);
+    font-weight: 500;
+}
+.container .price-card .bill-cta .row p span{
+    background-color: hsl(14, 92%, 95%);
+    padding: 2px 5px;
+    color: hsl(15, 100%, 70%);
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-left: 5px;
+}
+.container .price-card .bill-cta .row .bill-btn{
+    width: auto;
+
+}
+.container .price-card .bill-cta .row .bill-btn .toggle_btn{
+    width:50px;
+    height: 25px;
+    background: hsl(223, 50%, 87%);
+    position: relative;
+    border-radius: 20px;
+    padding: 1px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    
+}
+.container .price-card .bill-cta .row .bill-btn .toggle_btn > .toggler{
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    left: 3px;
+    top: 4px;
+    border-radius: 50%;
+    background: white;
+    transition: all 0.3s ease-in-out;
+}
+.container .price-card .bill-cta .row .bill-btn .toggle_btn.active{
+    background-color: hsl(174, 86%, 45%);
+}
+.container .price-card .bill-cta .row .bill-btn .toggle_btn.active > .toggler{
+    transform: translateX(150%);
+}
+
+
+hr{
+    border-top:1px solid gainsboro;
+
+}
+
+/* Free trial */
+.container .price-card .free-trail{
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 30px;
+}
+.container .price-card .free-trail .col2-access .row3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    flex-basis: 1;
+    gap: 0.7rem;
+    width: 100%;
+    padding: 5px 0;
+}
+.container .price-card .free-trail .col2-access .row3 .col2{
+    text-align: start;
+}
+.container .price-card .free-trail .col2-access .row3 .col2 p{
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color:  hsl(227, 35%, 25%);
+    font-weight: 500;
+
+}
+.container .price-card .free-trail .col2-access .row3 .col2 .checkmark{
+    max-width: 100%;
+    margin: 3px 0;
+    font-weight: 700;
+    
+}
+.container .price-card .free-trail .col2-access .row3 .col2 .checkmark img{
+    object-fit: fill;
+}
+.container .price-card .free-trail .btn-start{
+    display: inline-block;
+    padding: 9px 30px;
+    border: none;
+    outline: none;
+    background-color: hsl(227, 35%, 25%);
+    color:hsl(225, 20%, 60%);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.container .price-card .free-trail .btn-start:hover{
+    background-color:hsl(227, 35%, 25%);
+    color: white; 
+}
+
+/* This is the shape divider */
+.custom-shape-divider-bottom-1668515196 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1668515196 svg {
+    position: relative;
+    display: block;
+    width: calc(253% + 1.3px);
+    height: 104px;
+}
+
+.custom-shape-divider-bottom-1668515196 .shape-fill {
+    fill: hsl(230, 100%, 99%);
+}
